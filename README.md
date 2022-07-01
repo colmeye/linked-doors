@@ -71,5 +71,7 @@ if (door != noone) {
 ```
 In the above example, if a linked door is found when entering a room, the player is placed 16px away from that door in the direction that it is facing.
 
+<br />
+
 # License
 [MIT](https://choosealicense.com/licenses/mit/)
