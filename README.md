@@ -16,7 +16,7 @@ Using Linked Doors is meant to be simple. There are only three functions that ne
 
 ## ld_declare_door(link_name, other_room)
 
-Intended to be ran in instance creation code of your door object. This function will declare the calling instance as a "door". This door will automatically be "linked" to a door in the `other_room` with the same `link_name`  
+Intended to be ran in instance creation code of your door object. This function will declare the calling instance as a "door". This door will automatically be "linked" to a door in the `other_room` with the same `link_name`.
 
 | Argument | Type | Description |
 | --- | --- | --- |
@@ -39,7 +39,7 @@ ld_declare_door("house_abc_front", r_outside);
 
 ## ld_trigger_door([id])
 
-Signals that the player has interacted with a certain door instance. The room will change to the triggered door's `other_room` and the matching door can then be found with the following `ld_roomstart_find_door()` function
+Signals that the player has interacted with a certain door instance. The room will change to the triggered door's `other_room` and the matching door can then be found in this new room with the following `ld_roomstart_find_door()` function.
 
 | Argument | Type | Description |
 | --- | --- | --- |
@@ -61,7 +61,7 @@ ld_trigger_door();
 
 ## ld_roomstart_find_door()
 
-Should be ran on room start. Returns the instance ID of the door with the matching `link_name`. I would recommend using this function in a room start event of either: a persistent object that spawns the player, or the player itself to move it to the correct spot.
+Should be ran on room start. Returns the instance ID of the door with the matching `link_name`. I would recommend using this function in the room start event of either: a persistent object that spawns/moves the player, or the player itself to move it to the correct spot.
 
 ```javascript
 /// Room start event of persistent object
