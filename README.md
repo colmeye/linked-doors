@@ -1,3 +1,5 @@
+![Linked Doors Cover Image](LinkedDoorsCover.png?raw=true)
+
 # Linked Doors
 
 Linked Doors is a GameMaker asset to simplify moving a player between rooms. The goal of this asset is to remove hardcoded coordinates from room transitioning by relying on door instances with "links" between them. No assumptions are made about how the player will interact with the doors, meaning Linked Doors should work for all games.
@@ -59,7 +61,7 @@ ld_trigger_door();
 
 ## ld_roomstart_find_door()
 
-Should be ran on room start. Returns the instance ID of the matching door in this room or `noone`. I would recommend using this function in a room start event of either: a persistant object that spawns the player, or the player itself to move it to the correct spot.
+Should be ran on room start. Returns the instance ID of the matching door in this room or `noone`. I would recommend using this function in a room start event of either: a persistent object that spawns the player, or the player itself to move it to the correct spot.
 
 ```javascript
 /// Room start event of persistent object
