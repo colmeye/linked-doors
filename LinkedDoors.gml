@@ -5,7 +5,7 @@
 * |_____|_|_|_|_,_|___|___|  |____/|___|___|_| |___|
 *
 * A GameMaker asset to simplify moving a player between rooms
-* Version: 0.1.0
+* Version: 0.1.1
 */
 
 
@@ -62,10 +62,14 @@ function ld_declare_door(_link_name, _other_room) {
 * @return	{void}
 */
 function ld_trigger_door(_id = id) {
+	// Get info about the door that was triggered, set target and change rooms
 	var door_info = global.__door_instance_info[$ _id];
-	
 	global.__door_link_target = door_info.link_name;
 	room_goto(door_info.other_room);
+	
+	// Reset to save memory
+	global.__door_instance_info = {};
+	global.__door_link_info = {};
 }
 
 
