@@ -5,7 +5,7 @@
 * |_____|_|_|_|_,_|___|___|  |____/|___|___|_| |___|
 *
 * A GameMaker asset to simplify moving a player between rooms
-* Version: 0.1.1
+* Version: 0.1.2
 */
 
 
@@ -41,11 +41,11 @@ global.__door_link_target = undefined;
 
 
 /**
-* Adds the calling instance to two global variables that will link it to another
-* door in another room with the same `_link_name`
-* @param	{string}	_link_name		Identifying name that will link two doors between rooms
-* @param	{asset}		_other_room		Room to find the linked door in
-* @return	{void}
+* @function ld_declare_door(_link_name, _other_room)
+* @descrioption Intended to be ran in instance creation code of your door object. This function will declare the calling instance as a "door". This door will automatically be "linked" to a door in the other_room with the same link_name
+* @param	{String}	_link_name		Identifying name that will link two doors between rooms
+* @param	{Asset}		_other_room		The room asset that the other door can be found in
+* @return	{Undefined}
 */
 function ld_declare_door(_link_name, _other_room) {
 	global.__door_instance_info[$ id] = {
@@ -58,8 +58,10 @@ function ld_declare_door(_link_name, _other_room) {
 
 
 /**
-* Called upon interaction with a door. Changes the room and sets which link to search for
-* @return	{void}
+* @function ld_trigger_door(_id)
+* @description Called upon interaction with a door. Changes the room and sets which link to search for
+* @param	{[Id.Instance]}		_id		Defaults to the calling instance's ID. This argument can be used if the function is called outside of a door instance's scope
+* @return	{Undefined}
 */
 function ld_trigger_door(_id = id) {
 	// Get info about the door that was triggered, set target and change rooms
@@ -74,8 +76,9 @@ function ld_trigger_door(_id = id) {
 
 
 /**
-* Called upon room start to find the linked door's instance ID
-* @return	{instance | noone}		Instance ID of the linked door
+* @function ld_roomstart_find_door()
+* @description Called upon room start to find the linked door's instance ID
+* @return	{Id.Instance}		Instance ID of the linked door or noone
 */
 function ld_roomstart_find_door() {
 	if (global.__door_link_target != undefined) {
