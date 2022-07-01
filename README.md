@@ -61,7 +61,7 @@ ld_trigger_door();
 
 ## ld_roomstart_find_door()
 
-Should be ran on room start. Returns the instance ID of the door with the matching `link_name`. I would recommend using this function in the room start event of either: a persistent object that spawns/moves the player, or the player itself to move it to the correct spot.
+Should be ran on room start. Returns the instance ID of the door with a `link_name` that matches the one triggered with `ld_trigger_door()`. I would recommend using this function in the room start event of either: a persistent object that spawns/moves the player, or the player itself to move it to the correct spot.
 
 ```javascript
 /// Room start event of persistent object
