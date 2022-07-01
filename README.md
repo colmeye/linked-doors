@@ -10,6 +10,8 @@ Download the latest release and import the .yymps file into GameMaker by draggin
 
 Using Linked Doors is meant to be simple. There are only three functions that need to be used. **You'll also want a door object that the player can interact with.**
 
+<br />
+
 ## ld_declare_door(link_name, other_room)
 
 Intended to be ran in instance creation code of your door object. This function will declare the calling instance as a "door". This door will automatically be "linked" to a door in the `other_room` with the same `link_name`  
@@ -31,6 +33,8 @@ ld_declare_door("house_abc_front", r_house_abc);
 ld_declare_door("house_abc_front", r_outside);
 ````
 
+<br />
+
 ## ld_trigger_door([id])
 
 Signals that the player has interacted with a certain door instance. The room will change to that door's `other_room` and the matching door will be searched for.
@@ -50,6 +54,8 @@ if (distance_to_object(o_player) < 32 && keyboard_check_pressed(vk_enter)) {
 /// Ex2: Door object collision with player event. Collision activated
 ld_trigger_door();
 ```
+
+<br />
 
 ## ld_roomstart_find_door()
 
