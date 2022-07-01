@@ -44,7 +44,7 @@ global.__door_link_target = undefined;
 * @function ld_declare_door(_link_name, _other_room)
 * @descrioption Intended to be ran in instance creation code of your door object. This function will declare the calling instance as a "door". This door will automatically be "linked" to a door in the other_room with the same link_name
 * @param	{String}	_link_name		Identifying name that will link two doors between rooms
-* @param	{Asset}		_other_room		The room asset that the other door can be found in
+* @param	{Asset.GMRoom}		_other_room		The room asset that the other door can be found in
 * @return	{Undefined}
 */
 function ld_declare_door(_link_name, _other_room) {
